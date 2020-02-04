@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a30c814b88b49c4c928610a6b78beb9, type: 3}
+  m_Name: TestRoom_01
+  m_EditorClassIdentifier: 
+  name: TestRoom_01
+  description: First test room.
+  id: 1
+  roomMesh: {fileID: -2135595098030945782, guid: fd547e369fda69848af31cc369cd986f,
+    type: 3}
+  roomMat: {fileID: 2100000, guid: 2516de059b4330347baed2a675081fc9, type: 2}
+  topDoor: 1
+  bottomDoor: 1
+  leftDoor: 1
+  rightDoor: 1
+  frontDoor: 1
+  backDoor: 1
