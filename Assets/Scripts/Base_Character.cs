@@ -116,7 +116,9 @@ public abstract class Base_Character : MonoBehaviour
     private void FireSimpleVector(GameObject handler, float speed)
     {
         // Move bullet via the vector's Magnitude
-        handler.transform.position += Time.deltaTime * speed;
+        //handler.transform.position += Time.deltaTime * speed;
+
+        // Testing repository commits //
 
     }
 
