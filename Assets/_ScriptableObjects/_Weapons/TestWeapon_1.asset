@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TestWeapon_1
   description: This is a Weapon test.
-  bulletType: 0
+  bulletType: 1
   vfx:
-  - {fileID: 1788485523201725276, guid: 36d707b3bf46b974980c13828c1763af, type: 3}
+  - {fileID: 1788485523201725276, guid: 47b2f985b380b4f45a55cc1dcd5b7577, type: 3}
   damage: 1
   scaleSize: 1
-  fireRate: 0.1
-  speed: 5
+  fireRate: 0.05
+  speed: 200
