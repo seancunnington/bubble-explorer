@@ -29,7 +29,13 @@ public class Scan_PostProcessing : MonoBehaviour
 
     private float waveDistance = 0;
 
+    private float waveOpacity = 0;
 
+    [SerializeField]
+    private float opacityScalar = 1;
+
+
+    //[ImageEffectOpaque]
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
         Scan.SetFloat("_WaveDistance", waveDistance);
@@ -43,7 +49,7 @@ public class Scan_PostProcessing : MonoBehaviour
         cam.depthTextureMode = cam.depthTextureMode | DepthTextureMode.Depth;
 
         // Set the _MidPoint variable in "sh_Scan"
-        Scan.SetFloat("_MidPoint", maxDistance/2);
+        //Scan.SetFloat("_MidPoint", maxDistance/2);
     }
 
     private void Update()
@@ -51,6 +57,10 @@ public class Scan_PostProcessing : MonoBehaviour
         // Repeatedly send out a scan wave.
         // Located in this method because of the use of Time.
         StartWave();
+
+        // Always update the wave opacity.
+        // The longer the scan has been sent out, the less opaque the whole scan becomes.
+        Scan.SetFloat("_Opacity", waveOpacity);
     }
 
     // Send out a scan wave in pulses.
@@ -58,12 +68,22 @@ public class Scan_PostProcessing : MonoBehaviour
     private void StartWave()
     {
         // Timer used to send out pulses of scan waves.
+        // If the timer is greater than the threshold (hardcoded to 1 in this case),
+        // Then reset the following variables:
         if (pulseTimer >= 1)
         {
+            // This restarts the scan wave entirely, clearing the screen of the effect.
             waveActive = true;
+            // This resets the timer itself, to begin again.
             pulseTimer = 0;
         }
+        // Increase the timer multiplied by a scalar.
         pulseTimer += Time.deltaTime * pulseDelay;
+        // Decrease the opacity variable over time, 
+        // scaled by the max distance so it's completely black before the next scan.
+        if (waveOpacity >= 0)
+            waveOpacity -= Time.deltaTime * opacityScalar;
+
 
 
         // Send the Wave
@@ -79,6 +99,8 @@ public class Scan_PostProcessing : MonoBehaviour
         } else {
             // If not scanning, then keep the scan line at the camera
             waveDistance = 0;
+            // This makes the wave opaque again, so it's brighter at the start of the scan.
+            waveOpacity = 1;
         }
     }
 }
