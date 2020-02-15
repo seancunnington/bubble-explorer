@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: fx_Scan
-  m_Shader: {fileID: 4800000, guid: 979847cd7dcd1084b8e260ea9555e8bf, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8cf50ea08db6636438ea134a47b5d196, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -63,23 +63,25 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LeadSharp: 0.5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Opacity: 0.70814615
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveDistance: 7.765876
-    - _WaveTrail: 0.75
+    - _WaveDistance: 8.60822
+    - _WaveTrail: 5
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DistanceColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HBarColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 0}
-    - _LeadColor: {r: 1, g: 0.9820141, b: 0.6839622, a: 1}
-    - _MidColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TrailColor: {r: 0.4475792, g: 0.5540552, b: 0.8867924, a: 1}
+    - _HBarColor: {r: 0.497, g: 0.497, b: 0.497, a: 0}
+    - _LeadColor: {r: 0.559, g: 0.5502314, b: 0.41870198, a: 0}
+    - _MidColor: {r: 0, g: 0.692, b: 0.22880639, a: 0}
+    - _TrailColor: {r: 0.13178569, g: 0.3436765, b: 0.615, a: 0}
     - _WaveColor: {r: 1, g: 0, b: 0.08972883, a: 1}
